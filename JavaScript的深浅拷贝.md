@@ -6,13 +6,21 @@
 　【结论2】浅拷贝说到底就是地址的引用，而深拷贝则是数据和对象的复制。
 -------------------
   基本数据类型的深拷贝<br/>
-　``` JavaScript
-　var num = 1;
-　var num1 = 2;
-　num = 3;
-　console.log(num);   //3
-　console.log(num1);  //2
-　```
+``` JavaScript
+var num = 1;
+var num1 = 2;
+num = 3;
+console.log(num);   //3
+console.log(num1);  //2
+
+var str = ['1','2','3'];
+var str1 = str;
+str1[0] = 'chang';
+console.log(str);   //["chang", "2", "3"]
+console.log(str1);  //["chang", "2", "3"]
+```
+由上面的代码可以看出，在基本数据类型中赋值之后，num的变化并不会导致num1的变化；<br/>
+而对于引用类型的数组而言就不同了，在数组str1[0]变化之后，str[0]的值也跟着变化，这是因为引用类型的赋值是内存地址引用的赋值，所以单内存空间发生变化，引用同一个内存地址的数组引用str和str1所取得的值也就相应都发生了变化。
 ##2 数组的深浅拷贝
 * 数组的浅拷贝
 * 数组的深拷贝
