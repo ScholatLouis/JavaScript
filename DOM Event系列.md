@@ -4,4 +4,10 @@
 >>[2][事件传播与冒泡]()   
 >>[3][Event对象]()  
 >>[4][阻止浏览器默认事件行为]()  
->>[5][跨浏览器中事件]()  
+>>[5][跨浏览器中事件]()    
+
+###[参考文章]
+> 1. https://www.nczonline.net/blog/2009/06/30/event-delegation-in-javascript/  
+> 2. http://blog.jobbole.com/52430/  
+> 3. http://fuelyourcoding.com/jquery-events-stop-misusing-return-false/  
+> 4. http://www.quirksmode.org/js/dom0.html  
