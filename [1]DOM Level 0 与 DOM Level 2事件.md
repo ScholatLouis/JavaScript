@@ -1,9 +1,9 @@
 #[1]DOM Level 0 与 DOM Level 2事件
 1. DOM Level 0事件
- * 一开始浏览器处理事件的方式是将事件处理程序被设置为js代码串，且作为html的属性值（DOM Level 0的事件直接绑定到HTML代码中），如：
-	```HTML
-	<span id="test" onclick="alert('event inline');">Click me!</span>
-	```
+ * 一开始浏览器处理事件的方式是将事件处理程序被设置为js代码串，且作为html的属性值（DOM Level 0的事件直接绑定到HTML代码中），如：  
+ ```HTML
+  <span id="test" onclick="alert('event inline');">Click me!</span>
+ ```
  * DOM Level 0对某一元素不能同时绑定同一事件，因为后面的事件会覆盖前面同样的事件绑定
 	```HTML
 	<span id="test" onclick="alert('event inline');">Click me!</span>
