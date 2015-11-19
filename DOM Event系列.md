@@ -11,3 +11,5 @@
 > 2. http://blog.jobbole.com/52430/  
 > 3. http://fuelyourcoding.com/jquery-events-stop-misusing-return-false/  
 > 4. http://www.quirksmode.org/js/dom0.html  
+> 5. https://davidwalsh.name/event-delegate  
+> 6. http://javascript.info/tutorial/event-delegation  
