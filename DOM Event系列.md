@@ -13,3 +13,5 @@
 > 4. http://www.quirksmode.org/js/dom0.html  
 > 5. https://davidwalsh.name/event-delegate  
 > 6. http://javascript.info/tutorial/event-delegation  
+> 7. JavaScript权威指南（犀牛书）[第五版] 第十七章：事件和事件处理
+> 8. JavaScript高级程序设计 第九章 事件
