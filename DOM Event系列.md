@@ -4,7 +4,7 @@
 >>[2][事件传播与冒泡](https://github.com/ScholatLouis/JavaScript/blob/master/%5B2%5D%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD%E4%B8%8E%E5%86%92%E6%B3%A1.md)   
 >>[3][Event对象](https://github.com/ScholatLouis/JavaScript/blob/master/%5B3%5DEvent%E5%AF%B9%E8%B1%A1.md)  
 >>[4][阻止浏览器默认事件行为](https://github.com/ScholatLouis/JavaScript/blob/master/%5B4%5D%E9%98%BB%E6%AD%A2%E6%B5%8F%E8%A7%88%E5%99%A8%E9%BB%98%E8%AE%A4%E4%BA%8B%E4%BB%B6%E8%A1%8C%E4%B8%BA.md)  
->>[5][跨浏览器中事件]()    
+>>[5][跨浏览器中事件](https://github.com/ScholatLouis/JavaScript/blob/master/%5B5%5D%E8%B7%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6.md)    
 
 ###[参考文章]
 > 1. https://www.nczonline.net/blog/2009/06/30/event-delegation-in-javascript/  
