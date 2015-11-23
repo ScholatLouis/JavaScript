@@ -4,3 +4,7 @@
 > [3. 数组API[2]]()  
 > [4. 数组API[3]]()  
 > [5. 数组API[4]]()    
+
+##参考文章
+> [1]https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+> [2]https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Array_comprehensions
