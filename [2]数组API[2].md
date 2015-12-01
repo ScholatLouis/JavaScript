@@ -1,4 +1,4 @@
-#[2]数组API[2]
+#[3]数组API[2]
 ###Mutator Methods
 1 这个部分介绍的API主要有以下几个：
 > Array.prototype.pop()  
