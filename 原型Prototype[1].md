@@ -271,8 +271,8 @@
 由于篇幅过长，关于原型的应用继承放在原型Prototype[2]
 
 ###参考文章
-> [1]https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
-> [2]http://yehudakatz.com/2011/08/12/understanding-prototypes-in-javascript/
-> [3]http://blog.vjeux.com/2011/javascript/how-prototypal-inheritance-really-works.html
-> [4]http://www.ruanyifeng.com/blog/2011/06/designing_ideas_of_inheritance_mechanism_in_javascript.html
-> [5]JavaScript高级程序设计(3nd Edition)第六章
+> [1]https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain  
+> [2]http://yehudakatz.com/2011/08/12/understanding-prototypes-in-javascript/  
+> [3]http://blog.vjeux.com/2011/javascript/how-prototypal-inheritance-really-works.html  
+> [4]http://www.ruanyifeng.com/blog/2011/06/designing_ideas_of_inheritance_mechanism_in_javascript.html  
+> [5]JavaScript高级程序设计(3nd Edition)第六章  
