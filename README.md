@@ -10,7 +10,7 @@
 [7]  [数组API[1]](https://github.com/ScholatLouis/JavaScript/blob/master/%5B2%5D%E6%95%B0%E7%BB%84API%5B1%5D.md)  
 [8]  [数组API[2]](https://github.com/ScholatLouis/JavaScript/blob/master/%5B2%5D%E6%95%B0%E7%BB%84API%5B2%5D.md)  
 [9]  [数组API[3]](https://github.com/ScholatLouis/JavaScript/blob/master/%5B4%5D%E6%95%B0%E7%BB%84API%5B3%5D.md)  
-[10] [数组API[4]](https://github.com/ScholatLouis/JavaScript/blob/master/%5B4%5D%E6%95%B0%E7%BB%84API%5B4%5D.md)    
+[10] [数组API[4]](https://github.com/ScholatLouis/JavaScript/blob/master/%5B5%5D%E6%95%B0%E7%BB%84API%5B4%5D.md)    
 [11] [原型prototype[1]](https://github.com/ScholatLouis/JavaScript/blob/master/%E5%8E%9F%E5%9E%8BPrototype%5B1%5D.md)  
 [12] [原型prototype[2]](https://github.com/ScholatLouis/JavaScript/blob/master/%E5%8E%9F%E5%9E%8Bprototype%5B2%5D.md)  
 [13] [命名提升Hoisting](https://github.com/ScholatLouis/JavaScript/blob/master/%E5%91%BD%E5%90%8D%E6%8F%90%E5%8D%87Hoisting.md)  
