@@ -80,7 +80,7 @@
 ![上面代码的原型关系图](http://123.56.156.116/Louis/prototype/prototypeForth.png)  
 
 > 1 由上面的图可以看到，由于SubType.prototype是作为SuperType的实例，所以在SubType.prototype中保存有一份SuperType实例对象都具有的属性，即color属性。这就会导致SubType的所有实例都共享一份color；  
-> 2 又因为在原型中额所有属性都是共享的，所以在SubType的实例中都能引用到color的属性值。因此我们可以看到在instanceFirst和instanceSecond都是共享同一个color数组，这也就是为什么instanceFirst改变了color的值之后，instanceSecond的color数组也跟着改变的原因。    
+> 2 又因为在原型中所有属性都是共享的，所以在SubType的实例中都能引用到color的属性值。因此我们可以看到在instanceFirst和instanceSecond都是共享同一个color数组，这也就是为什么instanceFirst改变了color的值之后，instanceSecond的color数组也跟着改变的原因。    
 > 3 原型链继承存在的问题：通过原型继承，原型实际上是变成另一个类型的实例，于是原先的实例属性也就顺理成章的变成了现在原型的属性。   
 
 ###原型链问题的解决方法
@@ -104,7 +104,7 @@
 ```
 > 上面的这种方法通常称之为经典继承方法，但是该方法还是存在构造函数模式的缺点，即所有的方法都在构造函数中定义，因此函数的复用就无从谈起。因此很多情况下都是使用下面的一种方法：组合继承。  
 
-2 组合继承即在上面的额方法中添加如原型链的形式。
+2 组合继承即在上面的方法中添加如原型链的形式。
 ```JavaScript
   function SuperType(name){
   	this.name = name;
