@@ -46,4 +46,15 @@
 		"node" : true
 	}
 ```
-> 这个文件的配置主要是说明对那些语法进行检查，而对于其中各个属性的具体含义，可以通过http://jshint.com/docs/options/ 进行查看。
+> 这个文件的配置主要是说明对那些语法进行检查，而对于其中各个属性的具体含义，可以通过http://jshint.com/docs/options/进行查看。
+
+> 而对于demo.js文件，则是需要进行js语法检测的文件。我们可以故意写错来进行验证
+
+```JavaScript
+	function temp(){
+		var a = 10;
+		console.log(a + c);
+	}
+```
+
+> 在终端执行grunt之后可以看到报了一个错误，指向c没有定义。
