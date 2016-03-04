@@ -19,5 +19,12 @@
 [16] [require学习笔记[1]](https://github.com/ScholatLouis/JavaScript/blob/master/require%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5B1%5D.md)  
 [17] [require学习笔记[2]](https://github.com/ScholatLouis/JavaScript/blob/master/require%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5B2%5D.md)  
 [18] [backbone,require整合Todo实例]()  
+[19] [原生JavaScript实现Todo实例]()    
+[20] [Backbone,require模块化编程与原生JS的对比]()
+[21] [Grunt插件之unglify的使用](https://github.com/ScholatLouis/JavaScript/blob/master/Grunt%E4%B9%8Buglify%E6%8F%92%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8.md)
+[22] [Grunt插件之jshint的使用]()
+[23] [Grunt插件之cssmin的使用]()
+[24] [Grunt插件之concat的使用]()
+[25] [Grunt插件之csslint的使用]()
 
 持续更新ing
