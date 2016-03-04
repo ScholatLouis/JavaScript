@@ -15,7 +15,7 @@
 	model.exports = function(grunt){
 		grunt.initConfig({
 			pkg: grunt.file.readJSON("package.json"),
-			jshint: {
+			uglify: {
 				options: {
 					//stripBanners主要用于清除/**/这类的注释信息
 					stripBanners: true,
@@ -31,9 +31,9 @@
 			}
 		});
 		//加载jshint插件
-		grunt.loadNpmTasks("grunt-contrib-jshint");
+		grunt.loadNpmTasks("grunt-contrib-uglify");
 		//注册事件
-		grunt.registerTask("default", ["jshint"]);
+		grunt.registerTask("default", ["uglify"]);
 	}
 ```
 
@@ -46,5 +46,5 @@
 		"devDependencies": {}
 	}
 ```
-> 在package.json文件中，devDependencies是需要依赖的插件，我们在创建package为你吉安的时候可以不写，在执行npm install grunt-contrib-jshint --save-dev命令之后，devDependencies中的信息自动会添加上去。  
+> 在package.json文件中，devDependencies是需要依赖的插件，我们在创建package为你吉安的时候可以不写，在执行npm install grunt-contrib-uglify --save-dev命令之后，devDependencies中的信息自动会添加上去。  
 > 配置完成之后，我们执行grunt则可以完成js文件的压缩，同时压缩之后的文件都存放在dest目录下。
