@@ -1,13 +1,13 @@
 ###Grunt插件之uglify的使用
 > uglify插件是用来压缩js文件，具体的使用我们通过例子说明，首先看下目录结构  
-> ->grunt_test  
-  --->src  
-  ------>jquery.js  
-  ------>underscore.js  
-  ------>backbone.js  
-  --->dest  
-  --->Gruntfile.js  
-  --->package.json  
+>> ->grunt_test  
+   --->src  
+   ------>jquery.js  
+   ------>underscore.js  
+   ------>backbone.js  
+   --->dest  
+   --->Gruntfile.js  
+   --->package.json  
 
 现在我们要做的就是把src目录下的所有js文件都进行压缩，然后放到dest目录下。  
 首先我们需要配置Gruntfile.js文件，具体配置如下;
