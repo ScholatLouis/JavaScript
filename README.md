@@ -22,7 +22,7 @@
 [19] [原生JavaScript实现Todo实例]()    
 [20] [Backbone,require模块化编程与原生JS的对比]()  
 [21] [Grunt插件之unglify的使用](https://github.com/ScholatLouis/JavaScript/blob/master/Grunt%E4%B9%8Buglify%E6%8F%92%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8.md)  
-[22] [Grunt插件之jshint的使用]()  
+[22] [Grunt插件之jshint的使用](https://github.com/ScholatLouis/JavaScript/blob/master/Grunt%E4%B9%8Bjshint%E6%8F%92%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8.md)  
 [23] [Grunt插件之cssmin的使用]()  
 [24] [Grunt插件之concat的使用]()   
 [25] [Grunt插件之csslint的使用]()    
