@@ -18,13 +18,8 @@
 [15] [模块化编程](https://github.com/ScholatLouis/JavaScript/blob/master/%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B.md)  
 [16] [require学习笔记[1]](https://github.com/ScholatLouis/JavaScript/blob/master/require%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5B1%5D.md)  
 [17] [require学习笔记[2]](https://github.com/ScholatLouis/JavaScript/blob/master/require%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5B2%5D.md)  
-[18] [backbone,require整合Todo实例]()  
-[19] [原生JavaScript实现Todo实例]()    
-[20] [Backbone,require模块化编程与原生JS的对比]()  
 [21] [Grunt插件之unglify的使用](https://github.com/ScholatLouis/JavaScript/blob/master/Grunt%E4%B9%8Buglify%E6%8F%92%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8.md)  
 [22] [Grunt插件之jshint的使用](https://github.com/ScholatLouis/JavaScript/blob/master/Grunt%E4%B9%8Bjshint%E6%8F%92%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8.md)  
-[23] [Grunt插件之cssmin的使用]()  
-[24] [Grunt插件之concat的使用]()   
-[25] [Grunt插件之csslint的使用]()    
+[26] [闭包的使用：实现私有属性的getter和setter](https://github.com/ScholatLouis/JavaScript/blob/master/%E9%97%AD%E5%8C%85%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%9A%E5%AE%9E%E7%8E%B0%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7%E7%9A%84getter%E5%92%8Csetter.md)
 
 持续更新ing
