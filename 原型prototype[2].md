@@ -22,7 +22,7 @@
 ```
 > 首先我们先来看下上面函数之间的关系，如下图：  
 
-![上面代码的原型关系图](http://123.56.156.116/Louis/prototype/prototypeThird.png)  
+![上面代码的原型关系图](https://github.com/ScholatLouis/ScholatLouis.github.io/blob/master/BlogImg/prototype/prototypeThird.png)  
 
   1 由上面的图我们可以看到，继承其实就是通过改写原型实现的。我们将SubperType的一个实例赋值给SubType.prototype，使得SubType.prototoype含有指向SuperType.prototype的指针，这样就将原型之间的关系联系起来，构成了原型链(prootype chain)。  
   2 注意观察，可以发现在SubType.prototype原型中含有SubType构造函数中的属性property。这是因为SubType.prototype是作为SuperType的一个实例，所以自然保存有SuperType实例中的属性，但是对于getSuperValue方法则还是保存在SuperType.prototype中。  
@@ -77,7 +77,7 @@
 ```
 > 首先还是来看下函数原型之间的关系，如下图：  
 
-![上面代码的原型关系图](http://123.56.156.116/Louis/prototype/prototypeForth.png)  
+![上面代码的原型关系图](https://github.com/ScholatLouis/ScholatLouis.github.io/blob/master/BlogImg/prototype/prototypeForth.png)  
 
 > 1 由上面的图可以看到，由于SubType.prototype是作为SuperType的实例，所以在SubType.prototype中保存有一份SuperType实例对象都具有的属性，即color属性。这就会导致SubType的所有实例都共享一份color；  
 > 2 又因为在原型中所有属性都是共享的，所以在SubType的实例中都能引用到color的属性值。因此我们可以看到在instanceFirst和instanceSecond都是共享同一个color数组，这也就是为什么instanceFirst改变了color的值之后，instanceSecond的color数组也跟着改变的原因。    
