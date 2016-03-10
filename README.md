@@ -23,7 +23,8 @@
 [26] [闭包的使用：实现私有属性的getter和setter](https://github.com/ScholatLouis/JavaScript/blob/master/%E9%97%AD%E5%8C%85%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%9A%E5%AE%9E%E7%8E%B0%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7%E7%9A%84getter%E5%92%8Csetter.md)  
 [27] [JS跑马灯抽奖实现](https://github.com/ScholatLouis/JavaScript/blob/master/JS%E8%B7%91%E9%A9%AC%E7%81%AF%E6%8A%BD%E5%A5%96%E5%AE%9E%E7%8E%B0.md)  
 [28] [JavaScript设计模式之单体模式](https://github.com/ScholatLouis/JavaScript/blob/master/JavaScript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F.md)  
-[29] [display:none与visibility:hidden的区别](https://github.com/ScholatLouis/JavaScript/blob/master/display:none%E4%B8%8Evisibility:hidden%E7%9A%84%E5%8C%BA%E5%88%AB.md)
-[30] [浏览器的渲染过程](https://github.com/ScholatLouis/JavaScript/blob/master/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B.md)
+[29] [display:none与visibility:hidden的区别](https://github.com/ScholatLouis/JavaScript/blob/master/display:none%E4%B8%8Evisibility:hidden%E7%9A%84%E5%8C%BA%E5%88%AB.md)  
+[30] [浏览器的渲染过程](https://github.com/ScholatLouis/JavaScript/blob/master/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B.md)  
+[31] [前端代码性能优化]()  
 
 持续更新ing
