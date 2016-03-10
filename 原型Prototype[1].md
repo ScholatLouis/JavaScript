@@ -103,7 +103,7 @@
 
  * 原型对象的理解
   1. 在创建了一个函数之后，JavaScript引擎就会为该函数创建一个prototype属性，这个属性指向原型对象。而原型对象中含有一个constructor的属性，这个属性指向含有原型对象所在的函数。就如之前的构造函数Person、Person.prototype、personFirst之间的关系如下图：
-  ![三者之间的关系示意图](http://123.56.156.116/Louis/prototype/prototypeFirst.png)
+  ![三者之间的关系示意图](https://github.com/ScholatLouis/ScholatLouis.github.io/blob/master/BlogImg/prototype/prototypeFirst.png)
 
 > 由上图可以看到，其实实例和构造函数之间并没有直接的联系。每个实例中都含有[[prototype]]属性，这个属性指向Person.prototype这个原型对象，而Person.prototype原型对象中含有constructor属性则指向构造函数Person，构造函数也含有指向Person.prototype原型的属性prototype。  
 > 在personFirst中我们可以看到，该对象除了[[prototype]]属性之外，并没有其他的属性。但是我们能够通过personFirst.name得到“Louis"的值。这就是原型和对象实例查找属性的问题：  
@@ -245,7 +245,7 @@
 > 需要谨记的是：实例中的指针仅仅指向原型，而不是指向构造函数  
 > 重写原型之后构造函数、对象实例、原型之间的关系如下图：  
 
-![重写原型之后构造函数、对象实例、原型之间的关系](http://123.56.156.116/Louis/prototype/prototypeSecond.png)
+![重写原型之后构造函数、对象实例、原型之间的关系](https://github.com/ScholatLouis/ScholatLouis.github.io/blob/master/BlogImg/prototype/prototypeSecond.png)
 
 
  * 原型的弊端  
