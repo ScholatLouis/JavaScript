@@ -26,5 +26,6 @@
 [29] [display:none与visibility:hidden的区别](https://github.com/ScholatLouis/JavaScript/blob/master/display:none%E4%B8%8Evisibility:hidden%E7%9A%84%E5%8C%BA%E5%88%AB.md)  
 [30] [浏览器的渲染过程](https://github.com/ScholatLouis/JavaScript/blob/master/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B.md)  
 [31] [前端代码性能优化](https://github.com/ScholatLouis/JavaScript/blob/master/%E5%89%8D%E7%AB%AF%E4%BB%A3%E7%A0%81%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.md)  
+[32] [原型理解的补充](https://github.com/ScholatLouis/JavaScript/blob/master/%E5%8E%9F%E5%9E%8B%E7%90%86%E8%A7%A3%E7%9A%84%E8%A1%A5%E5%85%85.md)
 
 持续更新ing
