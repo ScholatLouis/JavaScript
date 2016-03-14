@@ -51,7 +51,7 @@
 > 参数：operand是一个表达式，表示对象或原始值
 > 常见的类型及其返回值，如下：
 
-![常见类型及其返回值](http://123.56.156.116/Louis/typeof/typeofFirst.png)
+![常见类型及其返回值](https://github.com/ScholatLouis/ScholatLouis.github.io/blob/master/BlogImg/typeof/typeofFirst.png)
 ```JavaScript
   //返回"number"
   typeof 37
