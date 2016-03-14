@@ -153,7 +153,7 @@
 ```
 > 上面代码的调用过程如下图：
 
-![reduce调用过程](http://123.56.156.116/Louis/array/ArrayFirst.png)
+![reduce调用过程](https://github.com/ScholatLouis/ScholatLouis.github.io/blob/master/BlogImg/array/ArrayFirst.png)
 
 ```JavaScript
   [0, 1, 2, 3, 4].reduce(function(previousValue, currentValue, currentIndex, array) {
@@ -162,7 +162,7 @@
 ```
 > 上面代码的调用过程如下图：
 
-![reduce调用过程](http://123.56.156.116/Louis/array/ArraySecond.png)
+![reduce调用过程](https://github.com/ScholatLouis/ScholatLouis.github.io/blob/master/BlogImg/array/ArraySecond.png)
 
 ```JavaScript
   var flattened = [[0, 1], [2, 3], [4, 5]].reduce(function(a, b) {
