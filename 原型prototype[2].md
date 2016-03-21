@@ -24,8 +24,8 @@
 
 ![上面代码的原型关系图](https://github.com/ScholatLouis/ScholatLouis.github.io/blob/master/BlogImg/prototype/prototypeThird.png)  
 
-  1 由上面的图我们可以看到，继承其实就是通过改写原型实现的。我们将SubperType的一个实例赋值给SubType.prototype，使得SubType.prototoype含有指向SuperType.prototype的指针，这样就将原型之间的关系联系起来，构成了原型链(prootype chain)。  
-  2 注意观察，可以发现在SubType.prototype原型中含有SubType构造函数中的属性property。这是因为SubType.prototype是作为SuperType的一个实例，所以自然保存有SuperType实例中的属性，但是对于getSuperValue方法则还是保存在SuperType.prototype中。  
+  1 由上面的图我们可以看到，继承其实就是通过改写原型实现的。我们将SuperType的一个实例赋值给SubType.prototype，使得SubType.prototoype含有指向SuperType.prototype的指针，这样就将原型之间的关系联系起来，构成了原型链(prootype chain)。  
+  2 注意观察，可以发现在SubType.prototype原型中含有SuperType构造函数中的属性property。这是因为SubType.prototype是作为SuperType的一个实例，所以自然保存有SuperType实例中的属性，但是对于getSuperValue方法则还是保存在SuperType.prototype中。  
   3 SubType.prototype中含有的属性都是共享的，所以对于property属性，如果SubType有多个实例则是共享该属性值。  
   4 原型继承之后的原型搜索，还是和之前一样，先搜索实例对象的属性，然后在沿着原型链逐步向上搜索，如果最后还是没有找到则直接返回undefined。  
   5 在JavaScript中，所有的对象都是继承自Object，所以所有函数的默认原型都是Object的实例，因此默认原型都会有一个内部指针，指向Object.prototype。这也是为什么每一个函数都会有toString(), valueOf()等默认方法的基本原因。
