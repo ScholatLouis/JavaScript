@@ -29,5 +29,6 @@
 [31] [前端代码性能优化](https://github.com/ScholatLouis/JavaScript/blob/master/%E5%89%8D%E7%AB%AF%E4%BB%A3%E7%A0%81%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.md)  
 [32] [原型理解的补充](https://github.com/ScholatLouis/JavaScript/blob/master/%E5%8E%9F%E5%9E%8B%E7%90%86%E8%A7%A3%E7%9A%84%E8%A1%A5%E5%85%85.md)  
 [33] [前端跨域请求](https://github.com/ScholatLouis/JavaScript/blob/master/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82.md)  
+[34] [substring和substr的区别](https://github.com/ScholatLouis/JavaScript/blob/master/substring%E5%92%8Csubstr%E7%9A%84%E5%8C%BA%E5%88%AB.md)  
 
 持续更新ing
