@@ -33,5 +33,6 @@
 [35] [前端为什么使用JSON作为数据传输](https://github.com/ScholatLouis/JavaScript/blob/master/%E5%89%8D%E7%AB%AF%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8JSON%E4%BD%9C%E4%B8%BA%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93.md)  
 [36] [Web缓存粗略笔记](https://github.com/ScholatLouis/JavaScript/blob/master/Web%E7%BC%93%E5%AD%98%E7%B2%97%E7%95%A5%E7%AC%94%E8%AE%B0.md)  
 [37] [JavaScript继承补充](https://github.com/ScholatLouis/JavaScript/blob/master/JavaScript%E7%BB%A7%E6%89%BF%E8%A1%A5%E5%85%85.md)  
+[38] [克隆DOM节点](https://github.com/ScholatLouis/JavaScript/blob/master/%E5%85%8B%E9%9A%86DOM%E8%8A%82%E7%82%B9.md)  
 
 持续更新ing
