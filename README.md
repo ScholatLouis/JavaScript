@@ -31,4 +31,6 @@
 [33] [前端跨域请求](https://github.com/ScholatLouis/JavaScript/blob/master/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82.md)  
 [34] [substring和substr的区别](https://github.com/ScholatLouis/JavaScript/blob/master/substring%E5%92%8Csubstr%E7%9A%84%E5%8C%BA%E5%88%AB.md)  
 [35] [前端为什么使用JSON作为数据传输](https://github.com/ScholatLouis/JavaScript/blob/master/%E5%89%8D%E7%AB%AF%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8JSON%E4%BD%9C%E4%B8%BA%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93.md)  
+[36] [Web缓存粗略笔记](https://github.com/ScholatLouis/JavaScript/blob/master/Web%E7%BC%93%E5%AD%98%E7%B2%97%E7%95%A5%E7%AC%94%E8%AE%B0.md)  
+
 持续更新ing
