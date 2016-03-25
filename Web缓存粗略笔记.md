@@ -52,3 +52,9 @@ B ETag(response) ==> If_None_Match(request)
 2) get请求会将数据直接放在http请求的后面，直接表现就是在url后面跟着一串参数，参数和url之间用?隔开，而参数之间则是使用&连接；post请求则是将数据放置在http请求包中。    
 3) get请求的数据大小一般都有限制，1024字节；而post请求则没有限制传输的数据大小。  
 4) get请求的安全性比post低，因为get请求直接将参数暴露出来。  
+
+#####HTML5Web缓存
+html5中提供了三种缓存方法，分别是  
+1 离线缓存mainfest  
+2 LocalStorage  
+3 SessionStorage  
