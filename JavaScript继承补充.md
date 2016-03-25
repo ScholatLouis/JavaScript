@@ -23,7 +23,8 @@
 	}
 	//通过原型链实现继承
 	Programmer.prototype = new Person();
-	//因为子类的原型对象等于超类的实例，所以prototype.constructor这个方法也等于超类的构造函数，因此对constructor的指向进行纠正。
+	//因为子类的原型对象等于超类的实例，所以prototype.constructor这个方法也等于超类的构造函数，
+	//因此对constructor的指向进行纠正。
 	Programmer.prototype.constructor = Programmer;
 	//给子类添加getSex方法
 	Programmer.prototype.getSex = function(){
