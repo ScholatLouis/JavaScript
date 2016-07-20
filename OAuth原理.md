@@ -21,7 +21,7 @@ OAuth2.0有四种授权方式，分别是：
 redirect_uri是授权成功之后的跳转页面  
 response_code这里的值是code，因为微信采用的是授权码模式  
 scope则是应用授权作用域，有两个值分别时snsapi_base和snsapi_userinfo。其中snsapi_base是不弹出授权页面，直接跳转到redirect_uri，并获取用户的openid；而snsapi_userinfo会弹出授权框，用户授权之后能获取到用户的昵称、头像等信息。授权弹框如下：  
-![OAuth授权弹框]()  
+![OAuth授权弹框](https://github.com/ScholatLouis/BlogImg/blob/master/OAuth_getUserInfo.png)  
 \#wechat_redirect是必须带上的参数  
 
 > 2 通过code获取网页授权access_token  
