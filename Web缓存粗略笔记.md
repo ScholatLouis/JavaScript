@@ -23,7 +23,7 @@
 
 2 http协议的缓存机制  
 我将http协议的缓存机制归类为两组，一组是用于记录缓存的有效时间；另外一组则是用于记录缓存判断。  
-1) 有效时间  
+1) 有效时间   
 在http头部有两个记录缓存的有效时间，分别是cache-control中的max-age和expires
 其中max-age是http1.1协议的，而expires则是http协议1.0的。所以当这两者的事件发生冲突的时候，max-age的优先级高于expires。  
 
