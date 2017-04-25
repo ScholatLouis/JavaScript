@@ -35,8 +35,8 @@
 [37] [JavaScript继承补充](https://github.com/ScholatLouis/JavaScript/blob/master/JavaScript%E7%BB%A7%E6%89%BF%E8%A1%A5%E5%85%85.md)  
 [38] [克隆DOM节点](https://github.com/ScholatLouis/JavaScript/blob/master/%E5%85%8B%E9%9A%86DOM%E8%8A%82%E7%82%B9.md)  
 [39] [OAuth授权](https://github.com/ScholatLouis/JavaScript/blob/master/OAuth%E5%8E%9F%E7%90%86.md)  
-[40] [cookie && localStorage && sessionStroage](https://github.com/ScholatLouis/JavaScript/blob/master/Web%E7%BC%93%E5%AD%98%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89.md)  
-[41] [linux定时任务cron]()  
+[40] [Web缓存笔记（2）](https://github.com/ScholatLouis/JavaScript/blob/master/Web%E7%BC%93%E5%AD%98%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89.md)  
+[41] [linux定时任务cron]()  
 [42] [Node之nodemailer模块]()  
 
 持续更新ing
