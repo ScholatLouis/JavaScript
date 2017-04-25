@@ -1,8 +1,8 @@
-###JavaScript继承补充
-在之前的文章中有讲过JavaScript继承的使用方法，这次是在之前的基础上做一些补充。在JavaScript中的继承方式有两种，分别是原型式继承和类式继承。之前的文章介绍的都是通过原型式继承的方式，这里主要补充类式继承。
+### JavaScript继承补充
+在之前的文章中有讲过JavaScript继承的使用方法，这次是在之前的基础上做一些补充。在JavaScript中的继承方式有两种，分别是原型式继承和类式继承。之前的文章介绍的都是通过原型式继承的方式，这里主要补充类式继承。  
 
-####JavaScript的原型式继承
-虽然之前已经介绍过原型式继承，但是在这里我们再次重温下：
+#### JavaScript的原型式继承
+虽然之前已经介绍过原型式继承，但是在这里我们再次重温下： 
 ```JavaScript
 	//声明一个超类
 	function Person(name){
@@ -36,7 +36,7 @@
 	console.log(_temp.getName());
 ```
 
-####JavaScript的类式继承
+#### JavaScript的类式继承
 ```JavaScript
 	var clone = function(obj){
 		var _f = function(){};
