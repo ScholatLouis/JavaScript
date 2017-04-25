@@ -1,10 +1,10 @@
-###require学习笔记[2]
-1 require的加载  
+### require学习笔记[2]
+1 require的加载   
 
 > <script type="text/javascript" data-main="main" src="js/require.js"></script>  
 其中src的属性值用来指定require库的位置，而data-main用来指定主模块，通常命名为main.js，由于require知道加载的脚本为.js格式，因此可以省略掉.js直接写成main
 
-2 主模块main的配置
+2 主模块main的配置  
 
 ```JavaScript
 	require(["moduleA", "moduleB", "moduleC"],function(moduleA, moduleB, moduleC){
