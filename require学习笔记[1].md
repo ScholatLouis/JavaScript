@@ -1,9 +1,9 @@
-###require学习笔记[1]
-#####AMD与CommonJs
+### require学习笔记[1]
+##### AMD与CommonJs
 AMD和CommonJs都是模块化编程的规范，不同的是AMD规范主要用于浏览器，而CommonJs主要用于后台。
 AMD是Asynchronous Module Definition的缩写，意思就是异步模块定义。它采用异步的方式加载模块，模块的加载不会影响到它后面语句的运行，也就不会出现网页假死的状态。require.js采用的就是AMD规范的异步加载库。
 
-#####require.js
+##### require.js
 require.js的两个主要功能：
 1）实现js的异步加载
 2）管理库之间的依赖关系
