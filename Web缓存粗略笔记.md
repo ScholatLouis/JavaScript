@@ -35,8 +35,8 @@ B ETag(response) ==> If_None_Match(request)
 
 > 为什么有了Last_Modified还需要ETag字段呢？主要的原因有以下三个：  
 > 1) Last_Modified只能精确到秒级，对于经常秒级以下修改的文件，则需要通过ETag判断是否已经发生变化；  
-2) 很多时候会出现Last_Modified时间发生变化，而实际上文件的文本内容并没有发生变化的情况，这种时候一样需要通过ETag进行判断；  
-3) 对于部分浏览器没能给资源加上准确的Last_Modified时间  
+> 2) 很多时候会出现Last_Modified时间发生变化，而实际上文件的文本内容并没有发生变化的情况，这种时候一样需要通过ETag进行判断；  
+> 3) 对于部分浏览器没能给资源加上准确的Last_Modified时间   
 
 3 使用web缓存构建站点  
 1) 对静态资源(js css 图片)设置一个比较长时间的缓存  
