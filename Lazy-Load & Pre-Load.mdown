@@ -1,0 +1,257 @@
+### Lazy-Load & Pre-Load
+Lazy-Load是懒加载，Pre-Load是预先加载。两者的区别主要是在Pre-Load是在页面整体加载成功的时候，图片也相应记载完成；而Lazy-Load则是在页面加载成功之后，当用户浏览到的时候再记载。Pre-Load和Lazy-Load各有优势，Pre-Load是牺牲性能来提高用户的体验；而Lazy-Load在需要加载大量图片等静态文件时具有性能优势。
+
+#### Lazy-Load
+实现Lazy-Load的方法主要有以下三种。
+
+###### 第一种
+首先将页面上的图片src属性设置为loading.gif，而图片的正式路径泽设置在data-src属性中，页面滚动的时候计算图片相应的位置和滚动的位置，当图片出现在浏览器视口内的时候，将图片的src属性设置为data-src的值，这样就可以实现Lazy-Load。
+
+```HTML
+	<img src="images/loading.gif" data-src="images/1.png" />
+	<img src="images/loading.gif" data-src="images/2.png" />
+	<img src="images/loading.gif" data-src="images/3.png" />
+	<img src="images/loading.gif" data-src="images/4.png" />
+	<img src="images/loading.gif" data-src="images/5.png" />
+	<img src="images/loading.gif" data-src="images/6.png" />
+	<img src="images/loading.gif" data-src="images/7.png" />
+	<img src="images/loading.gif" data-src="images/8.png" />
+```
+
+``` JavaScript
+function lazyLoad(){
+	var images = document.getElementsByTagName("img");
+	var len = images.length;
+	var n = 0;
+	return function(){
+		var seeHeight = document.documentElement.clientHeight;
+		var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+		for(var i = n; i < len; ++i){
+			if(images[i].offsetTop < seeHeight + scrollTop){
+				if(images[i].getAttribute("src") === "images/loading.gif"){
+					images[i].src = images[i].getAttribute("data-src");
+				}
+				// n变量主要是为了存储图片加载到的位置，避免每一次都从第一张图片开始遍历
+				n = n + 1;
+			}
+		}
+	}
+}
+
+var loadImage = lazyLoad();
+loadImage();	//初始化首页的页面图片
+window.addEventListener("srcoll", loadImages, false);
+```
+
+这种方法主要是通过比较offsetTop和scrollTop+clientHeight的大小，当小于时泽说明图片已经出现在士口中，这时候继续判断图片是否已经替换过，如果没有替换泽进行替换（data-src属性）。
+
+###### 第二种
+第一种方法能够实现图片的lazy-load，但是由于一旦对屏幕进行滚动，都会触发srcoll事件，并对图片的位置进行判断。因此会对页面的性能产生影响。因此可以对lazyload函数进行节流throttle和去抖debounce处理。[对于throttle和debounce具体可以参考这里]()
+
+> Debounce: 一部电梯停留在某一个楼层，当有一个人进来后，20s后自动关门，这20s的等待时间，又有一个人按了电梯进行，这20s又得重新计算，知道电梯关门那一刻才算是响应了事件。
+
+> Throttle: 好比一台自动饮料机，按拿铁按钮，在出饮料的过程中，不管按了多少次按钮都不会连续出饮料，中间的按钮不会被响应，必须要等着一杯的容量全部出完之后，再按拿铁饮料才会出下一杯。
+
+``` JavaScript
+function throttle(fn, delay, atleast){
+	var timeout = null,
+		startTiem = new Date();
+	return function(){
+		var curTime = new Date();
+		clearTimeout(timeout);
+		if(curTime - startTime >= atleast){
+			fn();
+			startTime = curTime;
+		} else {
+			timeout = setTimeout(fn, delay);
+		}
+	}
+}
+
+function lazyload(){
+	var images = document.getElementsByTagName("img");
+	var len = images.length;
+	var n = 0;
+	return function(){
+		var seeHegiht = document.documentElement.clientHeight;
+		var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+		for(var i = n; i < len; ++i){
+			if(images[i].offsetTop < seeHeight + scrollTop){
+				if(images[i].getAttribute("scr") === "images/loading.gif"){
+					images[i].src = images[i].getAttribtue("data-src");
+				}
+				n = n + 1;
+			}
+		}
+	}
+}
+
+var loadImages = lazyload();
+loadImages();	//初始化首页的图片
+window.addEventListener("scroll", throttle(loadImages, 500, 1000), false);
+```
+
+设置了500ms的延迟和1000ms的间隔，当超过1000ms未触发该函数，则立即执行该函数，否则延迟500ms执行该函数。
+
+``` JavaScript
+function debounce(fn, delay){
+	var timer = null;
+	return function(){
+		var context = this;
+		var args = arguments;
+		clearTimeout(timer);
+		timer = setTimeout(function(){
+			fn.apply(context, args);
+		}, delay);
+	}
+}
+
+function lazyload(){
+	var images = document.getElementsByTagName("img");
+	var lent = images.length;
+	var n = 0;
+	return function(){
+		var seeHeight = document.documentElement.clientHeight;
+		var scrollHeight = document.documentElement.scrollTop || document.body.scrollTop;
+		for(var i = n ; i < len; ++i){
+			if(img[i].offsetTop < seeHeight + scrollHeight){
+				if(img[i].getAttribute("src") == "loading.gif"){
+					img[i].src = img[i].getAttribtue("data-src");
+				}
+				n = n + 1;
+			}
+		}
+	}
+}
+
+var loadImages = lazyload();
+loadImages();	//初始化首页图片
+window.addEventListener("srcoll", debounce(loadImages, 500));
+```
+###### 第三种
+使用目前比较新的IntersectionObserver API，可以自动检测到元素是否可见，但是浏览器的兼容性目前并不友好，只有Chrome51+的支持。对于[IntersectionObserver可以点击这里了解]()
+
+``` JavaScript
+function query(selector){
+	return Array.from(document.querySelectorAll(selector));
+}
+
+var observer = new IntersectionObserer(function(items){
+	items.forEach(function(item){
+		var target = item.target;
+		if(target.getAttribute("src") == "images/loading.gif"){
+			target.src = target.getAttribute("data-src");
+		}
+	});
+	query("img").forEach(function(item){
+		io.observe(item);
+	})
+})
+```
+
+> IntersectionObserver传入一个回调函数，当其观察的元素集合出现的时候，则会执行回调函数。   
+> io.observer即要观察的元素，要一个个添加才可以。    
+> io管理的是一个数组，当元素出现或者小时的时候，数组添加或删除该元素，并且执行该回调函数。  
+
+#### Pre-Load
+预加载图片是提高用户体验的一种方法，图片预先加载到浏览器中。常见的预加载方式主要有以下三种。
+
+###### 第一种
+使用css和javascript实现预加载
+
+``` css
+ #preload-01 {
+ 	background: url(http://domain/image01.png)
+ }
+ #preload-02 {
+ 	background: url(http://domain/images02.png)
+ }
+ #preload-03 {
+ 	background: url(http://domain/images03.png)
+ }
+```
+通过css的这种方法能够在页面加载的时候同时实现图片的加载。但是加载的图片会同页面的其他内容一起加载，增加了页面的整体加载时间，因此为了能够解决这个问题，我们可以通过javascript代码来推迟加载的时间，直到页面加载完成。
+
+``` javascript
+function preloader(){
+	if(document.getElementById){
+		document.getElementById("preload-01").style.background = "url(http://domain/images-01.png)";
+		document.getElementById("preload-02").style.background = "url(http://domain/images-02.png)";
+		document.getElementById("preload-03").style.background = "url(http://domain/images-03.png)";
+	}
+}
+
+function addLoadEvent(func){
+	var oldOnload = window.onload;
+	if(typeof window.onload != "function"){
+		window.onload = func;
+	} else {
+		window.onlaod = function(){
+			if(oldOnload){
+				oldOnload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(preloader);
+```
+通过javascript来检测页面是否加载完成，等页面加载完成之后在加载图片。
+###### 第二种
+第一种方法在需要加载大量图片的时候就会消耗较多的时间，因此我们可以通过纯javascript来实现图片的预加载。
+
+``` JavaScript
+function preLaod(arrayOfImages){
+	$(arrayOfImages).each(function(){
+		$("<img/>")[0].src = this;
+		//Alternatively you could use:
+		//(new Image()).src = this;
+	});
+}
+
+preLoad([
+	'img/imageName.jpg',
+	'img/anotherOne.jpg',
+	'img/blahblahblah.jpg'
+]);
+```
+或者
+``` JavaScript
+function preloader(){
+	if(document.images){
+		img1 = new Image();
+		img2 = new Image();
+		img3 = new Image();
+		img1.src = "http://domain/images-01.png";
+		img2.src = "http://domain/images-02.png";
+		img3.src = "http://domain/images-03.png";
+	}
+}
+
+function addLoadEvent(func){
+	var oldOnload = window.onload;
+	if(typeof oldOnload != "function"){
+		window.onload = func;
+	} else {
+		window.onload = function(){
+			if(oldOnload){
+				oldOnload();
+			}
+			func();
+		}
+	}
+}
+
+addLoadEvent(preloader);
+```
+
+###### 第三种
+第三种方法则是通过Ajax实现异步加载图片。
+
+#### 参考文章
+[1] https://zhuanlan.zhihu.com/p/25455672  
+[2] https://i.jakeyu.top/2016/11/26/%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD/  
+[3] http://www.cnblogs.com/v10258/p/3376455.html  
+[4] http://fragged.org/preloading-images-using-javascript-the-right-way-and-without-frameworks_744.html  
+[5] https://css-tricks.com/forums/topic/difference-between-preloading-images-and-lazy-loading-images/  
+[6] http://www.ruanyifeng.com/blog/2016/11/intersectionobserver_api.html  
