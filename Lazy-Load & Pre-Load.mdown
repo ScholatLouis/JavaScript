@@ -254,4 +254,5 @@ addLoadEvent(preloader);
 [3] http://www.cnblogs.com/v10258/p/3376455.html  
 [4] http://fragged.org/preloading-images-using-javascript-the-right-way-and-without-frameworks_744.html  
 [5] https://css-tricks.com/forums/topic/difference-between-preloading-images-and-lazy-loading-images/  
-[6] http://www.ruanyifeng.com/blog/2016/11/intersectionobserver_api.html  
+[6] http://www.ruanyifeng.com/blog/2016/11/intersectionobserver_api.html   
+[7] https://perishablepress.com/3-ways-preload-images-css-javascript-ajax/   
