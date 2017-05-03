@@ -38,6 +38,7 @@
 [40] [Web缓存笔记（2）](https://github.com/ScholatLouis/JavaScript/blob/master/Web%E7%BC%93%E5%AD%98%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89.md)    
 [41] [linux定时任务cron]()    
 [42] [Node之nodemailer模块]()    
-[43] [Lazy-Load & Pre-Load](https://github.com/ScholatLouis/JavaScript/blob/master/Lazy-Load%20%26%20Pre-Load.mdown)
+[43] [Lazy-Load & Pre-Load](https://github.com/ScholatLouis/JavaScript/blob/master/Lazy-Load%20%26%20Pre-Load.mdown)    
+[44] [Client & scroll & offset](https://github.com/ScholatLouis/JavaScript/blob/master/client%20%26%20scroll%20%26%20offset.mdown)  
 
 持续更新ing
