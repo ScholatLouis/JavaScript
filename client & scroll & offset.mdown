@@ -1,0 +1,15 @@
+### client & scroll & offset
+在html中，任何一个元素都有三个表示位置和大小的对象：client,offset和scroll，每个对象都有相应的height，width, top, left属性，那么这些究竟有什么区别呢？
+
+> client属性是指一个元素是这样的概念：不包括滚动条占据的空间（实际上，如果出现了滚动条，元素的高度不会发生变化，clientHeight则会自动减少滚动条需要占据的17个像素的高度），不包括滚动条隐藏的区域、不包括边(border）。因此，clientHeight就是这个区域的高度，而clientTop实际上就是border的高度；
+
+> offset属性是指一个元素是这样的概念：不包括滚动条隐藏的区域、包括边(border）的宽度。因此，offsetHeight就是这个区域的高度，而offsetTop实际上是这个区域到它的父容器的距离；
+
+> scroll高度和元素的边框没有关系，它是实际上元素的高度，因此，如果出现了滚动条，scrollHeight可能会大于offset或client的高度。scrollTop则是元素的实际的顶部和可见的顶部这件的距离。
+
+#### clientHeight & scrollHeight & offsetHeight
+[1] http://stackoverflow.com/questions/22675126/what-is-offsetheight-clientheight-scrollheight  
+
+#### scrollTop & scrollTop & offsetTop
+[2] http://blog.sina.com.cn/s/blog_7e4815650101ds22.html  
+[3] http://www.programering.com/a/MTMwUjNwATU.html  
