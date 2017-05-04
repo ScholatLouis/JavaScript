@@ -1,7 +1,7 @@
-#命名提升Hoisting
+# 命名提升Hoisting
   在这一部分需要说明清楚的有两个内容，一个是JavaScript的作用域问题，另一个就是变量和函数声明提升hoisting问题。
 
-###JavaScript作用域
+### JavaScript作用域
   在之前学习的语言比如C语言，都是块级作用域，如：
 
 ```C
@@ -43,7 +43,7 @@ int main() {
   }
 ```
 
-###命名提升Hoisting
+### 命名提升Hoisting
   对于命名提升的理解，先看看下来的代码
 ```JavaScript
   var foo = 1;
@@ -185,5 +185,5 @@ int main() {
   console.log(a);	//最后这里弹出的a为1，因此函数b的作用域在此处已经结束，引用的a为全局定义的a。
 ```
 
-#参考文章
+# 参考文章
 > [1]http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html
