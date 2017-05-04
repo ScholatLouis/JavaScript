@@ -1,0 +1,267 @@
+### ES6笔记（1）
+
+#### let命令
+[在之前的文章中我们介绍过JavaScript变量作用域为函数级作用域](https://github.com/ScholatLouis/JavaScript/blob/master/%E5%91%BD%E5%90%8D%E6%8F%90%E5%8D%87Hoisting.md), ES6中提供了let命令，它与var一样用来声明变量，但是所声明的变量只在let命令所在的代码快中生效。
+
+###### 存在于块级作用域中
+```JavaScript
+{
+	let a = 10;
+	var b = 1;
+}
+console.log(a);		//print: ReferenceError: a is not defined.
+console.log(b);		//print: 1
+```
+对于let命令的使用在for循环中就更为合适，如：
+
+```JavaScript
+for(let i = 0; i < 10; ++i){
+	console.log(i);
+}
+```
+这样在for循环结束之后，在循环体之外变量i失效。let的出现能够很好解决以下问题：
+
+```JavaScript
+var a = [];
+for(var i = 0; i < 10; ++i){
+	a[i] = function(){
+		console.log(i);
+	}
+}
+a[6]();		//print: 10
+
+var b = [];
+for(let i = 0; i < 10; ++i){
+	a[i] = function(){
+	console.log(i);
+}
+a[6]();		//print: 6
+}
+```
+> 在使用var声明变量的时候，是全局范围有效，所以全局只有一个变量i，每一次循环都会改变变量i的值，而循环内被赋给数组a的function在运行的时候，会通过闭包独到这同一个变量i，从而导致最后输出的结果为10。
+
+> 通过let声明的变量i，只在当前的本轮循环中有效。所以每一次循环i其实都是一个新的变量，所以最后输出的记过为6。其实这里的块级作用域与java，c中的块级作用域相似。
+
+###### 不存在命名提升
+使用var声明的变量，或者是函数都存在命名提升的情况，而let声明的变量不会命名提升。
+
+```JavaScript
+console.log(a);		//print: undefined
+var a = 2;
+
+console.log(b);		//print: ReferenceError
+let b = 2;
+```
+
+由于不存在命名提升，因此在使用let命令的时候需要严格遵循先声明后使用的原则。
+
+###### 暂时性死区
+暂时性死去（Temporary dead zone）是由于在块级作用域中如果存在let命令，它所声明的变量就绑定在这个区域，不受外部的影响。
+
+```JavaScript
+var temp = 123;
+if(true){
+	temp = "abc";	//print: ReferenceError
+	let temp;
+}
+```
+ES6中规定了，如果在块级作用域中存在let和const命令，这个块级作用域对这些命令声明的变量从一开始就形成了封闭作用域。方式在声明之前就使用这些变量就会报错，这也就是暂时性死区。
+
+```JavaScript
+if(true){
+	// 暂时性死区开始
+	tmp = "abc";
+	console.log(tmp); 	//print: ReferenceError
+
+	let tmp;	//暂时性死区结束
+	console.log(tmp);	//print: undefined
+
+	tmp = 123;
+	console.log(tmp);	//print: 123;
+}
+```
+
+> 暂时性死区导致了typeof不再是一个安全的操作。在没有let声明变量的块级区域中，通过typeof判断变量的类型，如果对于没有声明的变量返回的结果是`undefined`，具体如下代码：
+
+```JavaScript
+if(true){
+	typeof x;	//print: "undefined"
+}
+
+if(true){
+	typeof x;	//print: ReferenceError
+	let x;
+}
+```
+
+###### 不允许重复声明
+和var不同的是，let命令不允许重复声明同一个变量。
+
+```JavaScript
+// 报错
+function temp(){
+	let a = 10;
+	var a = 1;
+}
+
+// 不报错 
+function temp(){
+	var a = 10;
+	var a = 20;
+}
+
+// 报错
+function temp(){
+	let a = 10;
+	let a = 20;
+}
+```
+
+这也导致了不能使用let在函数内部再一次声明参数
+
+```JavaScript
+function temp(arg){
+	let arg; 	// 报错
+}
+
+function temp(arg){
+	{
+		let arg; // 不报错
+	}
+}
+```
+
+###### 块级作用域与函数声明
+在ES5规定，函数只能在顶层作用域和函数作用域之中声明，不能再块级作用域声明，如：
+```JavaScript
+// 第一种情况
+if(true){
+	function f(){}
+}
+
+// 第二种情况
+try{
+	function f(){}
+} catch(e){
+	//...
+}
+```
+这两种情况在ES5中都是会报错，但是在ES6中引入了块级作用域，明确允许在块级作用域中声明函数。ES6规定，块级作用域中，函数声明语句的行为类似于let，在块级作用域之外不可引用。
+
+```JavaScript
+// ES5的浏览器环境
+function f(){
+	console.log("I am outside!");
+}
+
+(function(){
+	if(false){
+		function f(){
+			console.log("I am inside!");
+		}
+	}
+	f();
+}());
+```
+
+> 上面的代码在ES5中执行会得到`I am inside!`的结果，因为在if内声明的函数会进行命名提升，实际执行的代码如下：
+
+```JavaScript
+// ES5的浏览器环境
+function f(){
+	console.log("I am outside!");
+}
+
+(function(){
+	function f(){
+		console.log("I am inside!");
+	}
+	if(false){
+	}
+	f();
+}())
+```
+
+> 但是如果是在ES6中执行，理论上是会得到`I am outside!`，因为`I am inside!`的函数旨在if块级作用域中生效，因此等到的结果为outside。但是实际情况并非如此，在ES6中执行会报错，主要是因为为了兼容ES5对块级作用域内声明函数的处理规则，因此在ES6中使用let在块级作用域中声明函数相当于使用var在块级作用域中声明函数，会对函数进行提升，并报错：f is not a function。
+
+```JavaScript
+// ES6的浏览器环境
+function f(){
+	console.log("I am outside!");
+}
+
+(function(){
+	var f = undefined;
+	if(false){
+		function f(){
+			console.log("I am inside!");
+		}
+	}
+	f();	//print: Uncaught TypeError: f is not a function.
+}());
+```
+
+###### 块级作用域没有返回值
+本质上，块级作用域是一个语句，将多个操作封装在一起，并没有返回值。
+
+#### const命令
+const声明一个只读的常量，一旦声明，常量的值就不能改变。
+```JavaScript
+const PI = 3.1415;
+console.log(PI);
+
+PI = 3; 	//print: TypeError: Assignment to constant variable.
+```
+> const声明的变量不能改变值，因此const一旦声明变量，就必须立即初始化，不能留到以后赋值。const的作用域和let相同，只在声明所在的块级作用域内有效，同时const命令声明的常量也是不提升，同样存在暂时性死区，当然也与let一样不能重复声明。
+
+> 需要注意的是const实际上保证的并不是变量的值不得改动，而是变量指向的那个内存地址不得改动。因此对于简单的数据类型，值就保存在变量指向的那个内存地址，因此等同于常量。但是对于复合类型的数据而言，变量指向的内存地址保存的只是一个指针，const只能保证这个指针是固定的，至于它指向的数据结构是不是可变的，就完全不能控制了，因此讲一个对象声明为常量必须非常小心。
+
+```JavaScript
+const foo = {};
+foo.prop = 123;
+console.log(foo.prop)	//print: 123
+foo = {} 		//print: TypeError: 'foo' is read only
+```
+
+如果想把对象冻结，应该使用Object.freeze()方法。
+```JavaScript
+const foo = Object.freeze({});
+// 在常规模式下，下面的代码赋值不起作用
+// 在严格模式下，就会报错
+foo.prop = 123;
+```
+
+上面的代码，常量foo指向一个冻结的对象，所以添加新属性不起作用，严格模型下则还会报错。除了对对象本身冻结，对象的属性也应该冻结。下面的方法能够实现彻底冻结一个对象。
+```JavaScript
+var constantize = function(obj){
+	Object.freeze(obj);
+	Object.keys(obj).forEach(function(key, index){
+		if(typeof obj[key] === 'object'){
+			contantize(obj[key]);
+		}
+	})
+}
+```
+
+###### 顶层对象属性
+在ES5中，顶层对象和全局变量是混在一起的。如在浏览器中的顶层对象是window对象，在Node中指的是global对象。
+```JavaScript
+window.a = 1
+a; 		//print: 1
+
+a = 3
+window.a //print: 3
+```
+ES6为了改变顶层对象和全局变量之间的关系，同时为了保持兼容性，规定了`var`和`function`声明的变量仍然是全局变来那个，一九四顶层对象的属性；另一方面规定`let`和`const`命令声明的全局变量，不属于顶层对象的属性。
+
+```JavaScript
+var a = 1;
+window.a; 	//print: 1
+
+let b = 2;
+window.b;	//print: undefined
+```
+
+### 参考文章
+[1] http://es6.ruanyifeng.com/#docs/let  
+[2] https://github.com/ScholatLouis/JavaScript/blob/master/%E5%91%BD%E5%90%8D%E6%8F%90%E5%8D%87Hoisting.md  
