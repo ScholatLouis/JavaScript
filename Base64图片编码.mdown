@@ -1,0 +1,54 @@
+### Base64
+Base64是网络上常见的用于传输8Bit字节代码的编码方式之一，可用于在HTTP环境下传递较长标识信息。
+
+##### Base64的用途
+Base64编码可以用在不少地方，如图片编码
+
+```CSS
+<img src="data:image/gif;base64,R0lGODlhAwADAIABAL6+vv///yH5BAEAAAEALAAAAAADAAMAAAIDjA9WADs=" />
+```
+
+还有大家常见的迅雷下载地址也是使用Base64编码
+```CSS
+thunder://QUFodHRwOi8vd3d3LmJhaWR1LmNvbS9pbWcvc3NsbTFfbG9nby5naWZaWg==
+```
+
+Base64还可以用来字体编码，如：
+
+```CSS
+@font-face{
+    font-family: forTest;
+    src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAh4 ... RFERuENEGADl7JlY=) format('woff');
+}
+```
+
+Base64编码的特点是一堆连续字母，最后有1-2个“=”的代码。在这篇文章中主要记录Base64用于前端图片优化。
+
+##### 为什么要使用Base64编码
+使用Base64对图片进行编码，在图片加载的时候可以节省一个HTTP连接和请求。但是需要注意的是，通常对图片进行Base64编码生成的字符串编码大小一半而言都会比源文件稍大。
+
+##### 如何获取Base64编码
+获取图片的Base64编码可以通过在线工具转化
+> [Encode Data URL By PuterJam](http://www.pjhome.net/web/html5/encodeDataUrl.htm)  
+
+> 使用chrome浏览器，将图片拖入浏览器中，打开console选择source，并点击图片就可以看到选中图片的base64编码
+
+##### Base64与传统方法对比
+需要注意的是，使用Base64并不代表能够性能优化。虽然使用Base64能够减少http请求，但是由于图片的base64编码字符串长会造成css文件的冗长，难以阅读，而且也会导致css文件渲染的时候增加CSSOM时间。因此我们将Base64方法和传统的CssSPrit进行对比，选择合适Base64使用的场景。
+
+> Base64优点  
+1 减少HTTP请求    
+2 某些文件可以避免跨域问题    
+3 没有图片更新要重新上传，还要清理缓存的问题    
+
+> Base64的不足  
+1 浏览器支持：使用base64作为图片编码技术，ie6/7浏览器不支持  
+2 增加了css文件的大小  
+3 编码成本：图片完成后还需要base64编码  
+
+##### Base64的使用场景
+图片足够下且因为用处的特殊性无法制作成CssSprite，在整个网站的复用性高基本不会被更新。如背景图片；loading图片；用图片制作的线条等
+
+### 参考文章
+[1] http://www.zhangxinxu.com/wordpress/2012/04/base64-url-image-%E5%9B%BE%E7%89%87-%E9%A1%B5%E9%9D%A2%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/    
+[2] http://www.cnblogs.com/coco1s/p/4375774.html    
