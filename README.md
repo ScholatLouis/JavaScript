@@ -41,6 +41,7 @@
 [43] [Lazy-Load & Pre-Load](https://github.com/ScholatLouis/JavaScript/blob/master/Lazy-Load%20%26%20Pre-Load.mdown)    
 [44] [Client & scroll & offset](https://github.com/ScholatLouis/JavaScript/blob/master/client%20%26%20scroll%20%26%20offset.mdown)   
 [45] [ES6笔记（1）](https://github.com/ScholatLouis/JavaScript/blob/master/ES6%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89.mdown)      
-[46] [Base64图片编码](https://github.com/ScholatLouis/JavaScript/blob/master/Base64%E5%9B%BE%E7%89%87%E7%BC%96%E7%A0%81.mdown)    
+[46] [Base64图片编码](https://github.com/ScholatLouis/JavaScript/blob/master/Base64%E5%9B%BE%E7%89%87%E7%BC%96%E7%A0%81.mdown)   
+[47] [ES6笔记（2）](https://github.com/ScholatLouis/JavaScript/edit/master/ES6%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89.mdown)    
 
 持续更新ing
