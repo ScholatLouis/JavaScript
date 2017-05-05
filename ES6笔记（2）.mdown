@@ -1,0 +1,211 @@
+### ES6笔记（2）
+解构Destructing是ES6标准新添加的特性，通过对对象、数组等进行结构，能够很方便地从对象、数组中获取对应的数值。接下来我们分别介绍如何从数组、对象、字符串解构。
+
+##### 数组解构 
+```JavaScript
+const names = ["Louis", "Arene", "Mike"];
+```
+接下来我们需要从`names`数组中获取数据，如下所示：
+```JavaScript
+// 获取第一个元素
+const [first] = names;		//print: Louis
+// 获取前两个元素
+const [first, second] = names;	//print: Arene, Mike
+
+// 元素缺失的时候有默认值undefined
+const [first, second, third, fourth] = names 	//print: Louis Arene Mike undefined
+
+// 跳过数组中的元素
+var [first, , third] = names 	//print: Louis, Mike
+
+// 分配数组中剩下的元素
+// 在变量前面添加...标记，表示分配数组中剩下的元素给rest变量
+var [first, ...rest] = names;	//print: Louis;	["Arene", "Mike"]
+
+// 不完全解构
+let [a, [b], d] = [1, [2, 3], 4];	//print: a:1, b:2, d:4
+
+// 需要注意的是解构可以指定默认值，默认值生效的条件是解构数组中对应的数值不严格等于(===)undefined，即只有在对应的数组元素严格等于undefined的时候，默认值才会生效
+let [x = 1] = [undefined];		//print: x: 1
+let [x = 1] = [null] 	//print: x: null
+let [x = 1] = []
+
+// 如果默认值是一个表达式，那么这个表达式是惰性求值，即只有在用到的时候才会求值
+function f(){
+	console.log("aaa");
+}
+let [x = f()] = [1];	//print: x: 1
+//上面的代码中，因为x能取到值所以函数`f`不会执行，可以转换层如下的代码：
+let x;
+if([1][0] == undefined){
+	x = f();
+} else {
+	x = [1][0];
+}
+```
+
+##### 对象解构
+> 对象的解构和数组的解构有一个重要的不同就是：数组的元素是按照次序排列的，变量的取值完全是由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能正确取值
+
+```JavaScript
+  let {bar, foo} = {foo: "aaa", bar: "bbb"};	//print: foo: aaa; bar: bbb;
+
+  let {baz} = {foo: "aaa", bar" "bbb"}	//print: baz: undefined
+```
+
+> 实际上，对象的解构复制是下面形式的简写：
+
+```
+let {foo: foo, bar: bar} = {foo: "aaa", bar: "bbb"}
+```
+> 其中第一个foo是模式，第二个foo是变量名；同样的第一个bar是模式，第二个bar是变量名；其中变量名是可以更改，如：
+
+```
+let {foo: first, bar: second} = {foo: 'aaa', bar: 'bbb'}	//print: first: aaa; second: bbb 
+```
+> 其中foo 和 bar是模式，并没有值，如果强制输出会报错: foo is not defined  
+
+> 从上面的例子中我们可以看到，对象的解构是通过模式匹配完成的    
+> 先找到同名的属性，然后再将值赋值给对应的变量。真正被赋值的是后者而不是前者，前者只是一个模式或者说是属性，用于匹配对象中的属性  
+
+对象结构的时候同样可以赋默认值，默认值生效的条件同样是需要对应属性的值严格等于（===）undefined。
+
+```
+let {foo = 3} = {foo: undefined}	//print: foo: 3
+let {foo = 3} = {foo: null} 	//print: null 因为null不严格等于undefined
+
+// 将Math中的log,sin,cos函数分别赋值给log,sin,cos
+let { log, sin, cos } = Math;
+```
+
+如果对象解构失败的话，变量的值会等于undefined，但是如果解构的模式是嵌套对象，而且子对象所在的父属性不存在就会报错，具体如下代码示例：
+```JavaScript
+let {foo} = {bar: "baz"};	//print: foo: undefined
+let {foo: {bar}} = {baz: "baz"} //print: cannot match against "undefined" or "null"
+```
+
+在对象解构中如果需要将声明和赋值分开，需要借助圆括号`()`完成
+```JavaScript
+let foo;
+({foo} = {foo: 1});		//print: foo: 1
+
+let baz;
+{bar: baz} = {bar: 1}	//报错，因为解析器会将起首的大括号理解成一个代码块，而不是赋值语句
+```
+
+##### 字符串解构
+```JavaScript
+const [a, b, c, d, e] = "hello";	//print: a:h; b:e; c:l; d:l; e:o
+
+// 类似数组的对象都有一个length属性，因此可以对该属性解构赋值
+let {length: len} = 'hello'	//print: len: 5
+```
+
+##### 函数参数的解构赋值
+函数的参数也可以使用解构赋值
+
+```JavaScript
+function add([x, y]){
+	return x + y;
+}
+
+add([1, 2]);	//print: 3
+```
+> add函数中传入的[1, 2]被[x, y]接受并解构，因此`x`的值为1，`y`的值为2，最后得到的结果为3。
+
+函数参数的解构也可以使用默认值，默认值生效的条件同样需要对应属性的值严格等于undefined。
+```JavaScript
+function move({x = 0, y = 0}){
+	return [x, y];
+}
+move({x: 3, y: 8});		//print: [3, 8]
+move({x: 3});		//print: [3, 0]
+move({});		//print: [0, 0]
+move();		//print: [0, 0]
+```
+
+##### 解构与圆括号的关系
+不能使用圆括号的情况
+> 1 变量声明语句中，不能带圆括号   
+
+```JavaScript
+// 全部报错
+let [(a)] = [1];
+let {x: (c)} = {};
+let ({x: c}) = {};
+let {(x: c)} = {};
+let {(x): c} = {};
+let {o: ({p : p })} = {o: {p:2}};
+```
+报错的原因是，变量声明语句中模式不能使用圆括号
+
+> 2 函数参数中，模式也不能带圆括号   
+
+```JavaScript
+function f([(z)]){ return z; }
+```
+函数参数也属于变量声明，因此不能带圆括号
+
+> 3 赋值语句中，不能将整个模式，或嵌套模式中的一层，放在圆括号之中     
+
+```JavaScript
+// 全部报错，因为代码将整个模式放在圆括号中
+({ p : a }) = {P : 42};
+([a]) = [5];
+
+// 代码嵌套模式的一层，放在圆括号之中，导致报错
+[({p: a}), {x : c}] = [{}, {}];
+```
+
+可以使用圆括号的情况，只有以下一种情况
+> 赋值语句的非模式部分，可以使用圆括号    
+
+```JavaScript
+[(b)] = [3];
+({p : (d)} = {})
+```
+
+##### 解构的用途
+> 交换变量的值  
+
+```JavaScript
+let x = 1;
+let y = 3;
+[x, y] = [y, x];
+```
+
+> 从函数返回多个值  
+函数只能返回一个值，如果要返回多个值，只能将它们放在数组或对象里返回，有了解构赋值，取出对象或者数组中的值就非常方便了
+
+```JavaScript
+// 返回一个数组
+function example(){
+	return [1, 2,3];
+}
+let [a, b, c] = exapmle();
+
+// 返回一个对象
+function example(){
+	return {
+		foo: 1,
+		bar: 2
+	};
+}
+let {foo, bar} = example();
+```
+
+> 提取JSON数据  
+
+```JavaScript
+let jsonData = {
+	id: 42，
+	status: "OK",
+	data: [867, 5309]
+}
+let {id, status, data: number} = jsonData
+console.log(id, status, number)	//print: 42, "OK", [867, 5309]
+```
+
+### 参考文章
+[1] http://es6.ruanyifeng.com/#docs/destructuring      
+[2] https://juejin.im/post/58fd7151570c350058e5075b    
