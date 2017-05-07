@@ -43,5 +43,6 @@
 [45] [ES6笔记（1）](https://github.com/ScholatLouis/JavaScript/blob/master/ES6%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89.mdown)      
 [46] [Base64图片编码](https://github.com/ScholatLouis/JavaScript/blob/master/Base64%E5%9B%BE%E7%89%87%E7%BC%96%E7%A0%81.mdown)     
 [47] [ES6笔记（2）](https://github.com/ScholatLouis/JavaScript/edit/master/ES6%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89.mdown)    
+[48] [字符编码](https://github.com/ScholatLouis/JavaScript/blob/master/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81.mdown)    
 
 持续更新ing
