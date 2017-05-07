@@ -67,3 +67,6 @@ Unicode在制定的时候没有考虑与任何一种编码方式做兼容，因�
 [4] https://my.oschina.net/alphajay/blog/5689    
 [5] http://zkread.com/article/445187.html    
 [6] http://guochenglai.com/2016/06/03/coding-history/    
+[7] http://hustcalm.me/blog/2013/04/06/che-di-gao-dong-zi-fu-ji-he-zi-fu-bian-ma-cooked-from-other-posts/  
+[8] http://www.ruanyifeng.com/blog/2008/05/growth_of_utf-8_on_the_web.html  
+[9] https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/  
