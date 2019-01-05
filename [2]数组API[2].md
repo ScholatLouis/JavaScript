@@ -1,5 +1,5 @@
-#[3]数组API[2]
-###Mutator Methods
+# [3]数组API[2]
+### Mutator Methods
 1 这个部分介绍的API主要有以下几个：
 > Array.prototype.pop()  
 > Array.prototype.push()  
@@ -11,7 +11,7 @@
 
 *上面所列举的数组API都会改变当前操作的数组内容。
 
-####Array.prototype.pop()
+#### Array.prototype.pop()
 > 该方法删除数组的最后一个元素，并且返回被删除的元素。[在原来的数组上操作，且有返回值]  
 > 语法：arr.pop();  
 
@@ -25,7 +25,7 @@
   console.log([].pop());	//print: undefined
 ```
 
-####Array.prototype.push()
+#### Array.prototype.push()
 > 该方法将一个或者多个元素插入到数组的最后位置，并且返回新数组的长度。[在原来的数组上操作，并且有返回值]  
 > 语法：arr.push(element1[, element2, ... , elementN]);  
 
@@ -46,8 +46,8 @@
   console.log(vegetables);					//print: ['parsnip', 'potato', 'celery', 'beetroot']
 ```
 
-####Array.prototype.shift()
-> 该方法将数组的第一个元素移除，并且返回被移除的数组。[在原来的数组上操作，并且有返回值]  
+#### Array.prototype.shift()
+> 该方法将数组的第一个元素移除，并且返回被移除的元素。[在原来的数组上操作，并且有返回值]  
 > 语法：arr.shift();  
 
 ```JavaScript
@@ -61,7 +61,7 @@
   console.log([].shift());							//print: Undefined
 ```
 
-####Array.prototype.unshift()
+#### Array.prototype.unshift()
 > 该方法将一个或者多个元素插入到数组的第一个位置，并且返回新数组的长度。[在原来的数组上操作，并且有返回值]  
 > 语法：arr.unshift(element1[, element2, ..., elementN]);  
 
@@ -75,7 +75,7 @@
   Array.prototype.unshift.apply([1,2], [3,4]);	//the new arr is [1,2,3,4]
 ```
 
-####Array.prototype.reverse()
+#### Array.prototype.reverse()
 > 该方法将数组中所有元素的位置进行反转。[在原来的数组上操作，并且有返回值]  
 > 语法：arr.reverse()  
 
@@ -85,7 +85,7 @@
   console.log(myArray) 		//print: ['three', 'two', 'one']  
 ```
 
-####Array.prototype.sort()
+#### Array.prototype.sort()
 > 该方法对数组中所有的元素都进行排序，如果没有提供比较函数compareFunction，则按照字符串的Unicode码的顺序进行排序。[在原来的数组上操作，并且有返回值]  
 > 语法：arr.sort([compareFunction])  
 
@@ -159,7 +159,7 @@
 > +'90';				//results: 90;  
 > 数值型字符串会先转换成数值再进行运算；而对于非数值型字符串由于无法转换成数值，所以做任何四则运算结果都是NaN  
 
-####Array.prototype.splice()
+#### Array.prototype.splice()
 > 该方法可以对数组中已经存在元算进行删除，也可以添加元素到数组中。[在原来的数组上操作，并且有返回值]  
 > 语法：arr.splice(startIndex, deleteCount[, element1, element2, ..., elementN])  
 > startIndex: 改变数组的起始位置，如果startIndex大于数组的长度，则将数组的长度赋值给startIndex；如果startIndex为负数，则加上数组的长度。  
