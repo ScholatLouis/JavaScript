@@ -1,5 +1,5 @@
-#[4]数组API[3]
-###Accessor Methods
+# [4]数组API[3]
+### Accessor Methods
 1 这部分将要介绍的API主要是以下几个：
 > Array.prototype.concat()  
 > Array.prototype.join()  
@@ -10,7 +10,7 @@
 
 *上面列举的API都不会修改原来的数组
 
-####Array.prototype.concat
+#### Array.prototype.concat
 > 由原来的数组和提供的参数组成一个新的数组，并返回。  
 > 语法：var newArr = oldArr.concat([element1, element2, element3, ..., elementN]);  
 > 说明：   
@@ -42,7 +42,7 @@
   console.log(newArr[0].age);	//result: 24
 ```
 
-####Array.prototype.join()
+#### Array.prototype.join()
 > 该方法将数组转换成字符串，并返回该字符串。  
 > 语法：arr.join([separator=','])  
 > separator: 分隔符是可选的，当没有传入分隔符的时候则数组返回的字符串中每个元素使用逗号,  进行分开；如果有传入分隔符，则按照分隔符分开。  
@@ -55,7 +55,7 @@
   var myVar4 = a.join('');    // assigns 'WindRainFire' to myVar4
 ```
 
-####Array.prototype.slice()
+#### Array.prototype.slice()
 > 该方法返回一个新的数组，新的数组是原来数组的部分浅复制(shadllow copy)。  
 > 语法：arr.slice([startIndex[, endIndex]])  
 > startIndex: 当没有传入该参数则默认为0；如果传入的是负数，则加上数组长度；  
@@ -68,7 +68,7 @@
   var citrus = fruits.slice(1, 3);		// citrus = ['Orange','Lemon']
 ```
 
-####Array.prototype.toString()
+#### Array.prototype.toString()
 > 将数组组成一个字符串，并返回字符串。  
 > 语法：arr.toString()  
 > 与arr.join();得到的字符串一样  
@@ -79,7 +79,7 @@
   var temp2 = fruits.join();		//print: "Banana,Orange,Lemon,Apple,Mango"
 ```
 
-####Array.prototype.indexOf()
+#### Array.prototype.indexOf()
 > 该方法从数组(由前往后，即从0到arr.length-1顺序)找查找某个元素，如果能找到则返回第一个相同元素在数组中的位置；如果没能找到则返回-1  
 > 语法：arr.indexOf(searchElement[, fromIndex = 0])
 > searchElement: 要在数组中查找的元素
@@ -153,7 +153,7 @@
   }
 ```
 
-####Array.prototype.lastIndexOf()
+#### Array.prototype.lastIndexOf()
 > 从数组中查找指定的元素，如果存在则返回该元素第一次出现在数组中的位置，否则返回-1。需要注意的是查找的方向是从数组尾部往前，即arr.length到0   
 > 语法：arr.lastIndexOf(searchElement[, fromIndex = arr.length - 1])   
 > searchElement: 要查找的值  
