@@ -1,9 +1,9 @@
-#[2]数组API[1]
-####Array.prototype
+# [2]数组API[1]
+#### Array.prototype
  > Array.prototype属性代表了数组Array构造器的原型链。如果需要自行拓展数组函数，需要将函数指向Array.prototype链上。
  > 使用Array.isArray(Array.prototype)返回的结果为true
 
-####Array.prototype.length
+#### Array.prototype.length
  > 获取数组的长度：arr.length；数组的最大长度为2的32次方，即Math.pow(2,32)
 
  ```JavaScript
@@ -18,7 +18,7 @@
   	numbers[i] *= 2;
   }
  ```
-####Array.isArray()
+#### Array.isArray()
  > 用于判断一个对象是否为数组，如果是则返回true，否则返回false。
  > 语法：Array.isArray(obj)
 
@@ -44,7 +44,7 @@
   }
  ```
 
-###typeof VS. instanceof
+### typeof VS. instanceof
 1  typeof操作符
 
 > 语法：typeof operand  
