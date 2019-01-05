@@ -90,7 +90,7 @@
 	}
 ```
 
-> 上面的额代码没有将GiantCorp使用立即执行函数，因此我们可以通过创建多个GiantCorp来得到多个stringToArray函数，但是这样的话会导致内存消耗的增加，因为闭包函数引用到的两个函数_stripWhiteSpace和\_stringSplit一直存放在内存中，而且每个对象都保存一个副本，并不是公用。
+> 上面的代码没有将GiantCorp使用立即执行函数，因此我们可以通过创建多个GiantCorp来得到多个stringToArray函数，但是这样的话会导致内存消耗的增加，因为闭包函数引用到的两个函数_stripWhiteSpace和\_stringSplit一直存放在内存中，而且每个对象都保存一个副本，并不是公用。
 
 ##### 惰性实例化单例模式
 > 上面都是使用立即执行函数来创建单例模式，也就是在js加载完成之后就会创建相应的对象，但是如果我们并不需要立即创建对象，那么这种时候就需要使用惰性的方式来实现单例模式了。惰性实例化模式和之前的差别主要在需要通过一个静态函数getInstance()来获取到对象，进而通过这个获取到的对象来引用方法。具体看以下代码
@@ -117,7 +117,7 @@
 		};
 		return {
 			getInstance : function(){
-				if( uniqueInstance ){
+				if( !uniqueInstance ){
 					uniqueInstance = constructor();
 				}
 				return uniqueInstance;
