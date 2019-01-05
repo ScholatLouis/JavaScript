@@ -43,7 +43,7 @@ loadImage();	//初始化首页的页面图片
 window.addEventListener("srcoll", loadImages, false);
 ```
 
-这种方法主要是通过比较offsetTop和scrollTop+clientHeight的大小，当小于时泽说明图片已经出现在士口中，这时候继续判断图片是否已经替换过，如果没有替换泽进行替换（data-src属性）。
+这种方法主要是通过比较offsetTop和scrollTop+clientHeight的大小，当小于时则说明图片已经出现在窗口中，这时候继续判断图片是否已经替换过，如果没有替换则进行替换（data-src属性）。
 
 ###### 第二种
 第一种方法能够实现图片的lazy-load，但是由于一旦对屏幕进行滚动，都会触发srcoll事件，并对图片的位置进行判断。因此会对页面的性能产生影响。因此可以对lazyload函数进行节流throttle和去抖debounce处理。[对于throttle和debounce具体可以参考这里]()
