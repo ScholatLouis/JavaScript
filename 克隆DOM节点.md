@@ -1,4 +1,4 @@
-###克隆DOM节点
+### 克隆DOM节点  
 在[浏览器的渲染过程](https://github.com/ScholatLouis/JavaScript/blob/master/浏览器的渲染过程.md)一文中，有提到离线化处理DOM节点，其中的一种方法就是将DOM节点进行克隆，然后在重新替换。这篇文章主要是说明原生JavaScript和jQuery库下克隆节点的做法。  
 ##### 原生JavaScript
 原生JavaScript提供了一个方法克隆节点，cloneNode(boolean)。接受的参数boolean值表示是否同时克隆子节点，默认是false，即不克隆子节点。  
