@@ -117,7 +117,7 @@
   console.log('Number of Invalid Entries = ', invalidEntries); 	//print: 4
 ```
 
-####Array.prototype.map()
+#### Array.prototype.map()
 > map方法会组成一个新的数组，新数组元素的组成则是由每个元素经过callback处理后返回的结果组成。  
 > 语法：arr.map(callback, thisArg)  
 > callback传入的参数和forEach的含义一样，thisArg也一样   
@@ -138,7 +138,7 @@
   console.log(roots);				//print: [1, 2, 3]
 ```
 
-####Array.prototype.reduce()
+#### Array.prototype.reduce()
 > reduce方法会接收一个函数作为累加器，最后返回一个数值  
 > 语法：arr.reduce(callback[, initialValue])  
 > callback: function(previousValue, currentValue, currentIndex, array){}  
@@ -170,7 +170,7 @@
   }, []); 			// flattened is [0, 1, 2, 3, 4, 5]
 ```
 
-####Array.prototype.reduceRight()
+#### Array.prototype.reduceRight()
 > reduceRight方法与reduce一样，唯一的区别就是在对数组元素处理的顺序上，reduceRight的处理顺序是从数组元素的右边往左边方向进行，即从数组的末尾到数组的前面；而reduce则是从数组的前面处理到数组的末尾。  
 > 语法：arr.reduceRight(callback[, initialValue])
 
