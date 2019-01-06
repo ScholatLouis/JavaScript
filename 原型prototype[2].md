@@ -1,4 +1,4 @@
-#原型prototype[2]
+# 原型prototype[2]
  前面说了介绍了原型，这一部分说说原型的一大作用：继承。在面向对象中，继承有两种方法，分别是接口继承和实现继承。但是在JavaScript中，函数不能只签名，所以JavaScript中只有实现继承。
 > JavaScript继承的基本思路就是让一个引用类型继承另一个引用类型的属性和方法。    
 
@@ -57,7 +57,7 @@
  ```
 > 1 上面的代码首先将SubType.prototype赋值为SuperType的实例，这个时候是建立了继承关系；但是在后面又重写了SubType.prototype，这时候SubType.prototype变成了Object对象的一个实例，因此SubType和SuperType之间的关系已经被切断，两者之间没有了关系。 
 
-###原型链存在的问题
+### 原型链存在的问题
 ```JavaScript
   function SuperType(){
     this.color = ['red', 'blue', 'green'];
@@ -83,7 +83,7 @@
 > 2 又因为在原型中所有属性都是共享的，所以在SubType的实例中都能引用到color的属性值。因此我们可以看到在instanceFirst和instanceSecond都是共享同一个color数组，这也就是为什么instanceFirst改变了color的值之后，instanceSecond的color数组也跟着改变的原因。    
 > 3 原型链继承存在的问题：通过原型继承，原型实际上是变成另一个类型的实例，于是原先的实例属性也就顺理成章的变成了现在原型的属性。   
 
-###原型链问题的解决方法
+### 原型链问题的解决方法
 1 对于从SuperType构造函数继承下来的属性到原型中的问题，可以通过在SubType的构造函数中调用SuperType构造函数。可以通过call和apply来实现。
 ```JavaScript
   function SuperType(){
