@@ -1,8 +1,8 @@
-#原型Prototype
+# 原型Prototype
 > 在看了不少资料之后，对于原型的理解就是两个字，共享。
   在这一部分，将通过分析原型出现的原因，已经原型的应用-->继承。
   
-###原型Prototype的出现
+### 原型Prototype的出现
 > 在讨论原型的出现，就需要从对象的创建开始说起。
  
   创建对象可以通过new Object()或者直接通过对象字面量{}完成，但是使用这种方法会导致在创建多个对象的时候，产生大量的代码。因此有了工厂模式：  
@@ -270,7 +270,7 @@
 
 由于篇幅过长，关于原型的应用继承放在原型Prototype[2]
 
-###参考文章
+### 参考文章
 > [1]https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain  
 > [2]http://yehudakatz.com/2011/08/12/understanding-prototypes-in-javascript/  
 > [3]http://blog.vjeux.com/2011/javascript/how-prototypal-inheritance-really-works.html  
